@@ -170,6 +170,7 @@
             this.button9.TabIndex = 9;
             this.button9.Text = "3 Д Е Ж З D E F";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
             // 
             // button10
             // 
@@ -181,6 +182,7 @@
             this.button10.TabIndex = 12;
             this.button10.Text = "6 Р С Т У M N O";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
             // 
             // button11
             // 
@@ -192,6 +194,7 @@
             this.button11.TabIndex = 11;
             this.button11.Text = "5 М Н О П J K L";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
             // 
             // button12
             // 
@@ -203,6 +206,7 @@
             this.button12.TabIndex = 10;
             this.button12.Text = "4 И Й К Л G H I";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
             // 
             // button13
             // 
@@ -214,6 +218,7 @@
             this.button13.TabIndex = 15;
             this.button13.Text = "9 Ь Э Ю Я W X Y Z";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
             // 
             // button14
             // 
@@ -225,6 +230,7 @@
             this.button14.TabIndex = 14;
             this.button14.Text = "8 Ш Щ Ъ Ы T U V";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
             // 
             // button15
             // 
@@ -236,6 +242,7 @@
             this.button15.TabIndex = 13;
             this.button15.Text = "7 Ф Х С Ч P Q R S";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
             // 
             // button16
             // 
@@ -258,6 +265,7 @@
             this.button17.TabIndex = 17;
             this.button17.Text = "0 +";
             this.button17.UseVisualStyleBackColor = false;
+            this.button17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
             // 
             // button18
             // 

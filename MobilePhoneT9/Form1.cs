@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MobilePhoneT9.Model;
 using MobilePhoneT9.Controller;
 
 
@@ -23,7 +22,7 @@ namespace MobilePhoneT9
 
         private void OnOneButtonClick(object sender, EventArgs e)
         {
-            txtScreen.Text = TelephoneData.Instance.MainScreenText += "1";
+            txtScreen.Text = DataController.Data().MainScreenText += "1";
         }
 
         private void OnDeleteButtonClick(object sender, EventArgs e)
@@ -38,26 +37,21 @@ namespace MobilePhoneT9
 
         private void On2KeyDown(object sender, MouseEventArgs e)
         {
-            TelephoneData.Instance.CurrentTimer = 0;
-            TelephoneData.Instance.timer.Start();
-            TelephoneData.Instance.timer.Interval = 100;
-            TelephoneData.Instance.timer.Tick += SetCur;
-        }
-
-        private void SetCur(object sender, EventArgs e)
-        {
-            TelephoneData.Instance.CurrentTimer += 0.1;
+            TimerController.Instance.StartButtonTimer();
         }
 
         private void On2KeyUp(object sender, MouseEventArgs e)
         {
-            if (TelephoneData.Instance.timer.Interval > 3000)
+            if (TimerController.Instance.GetCurrentTimerValue() >= 3)
             {
-                TelephoneData.Instance.timer.Stop();
-                MessageBox.Show(TelephoneData.Instance.CurrentTimer.ToString());
+                MessageBox.Show("Число " + TimerController.Instance.GetCurrentTimerValue().ToString());
             }
-            MessageBox.Show(TelephoneData.Instance.CurrentTimer.ToString());
-
+            else if (TimerController.Instance.GetCurrentTimerValue() <= 1)
+            {
+                MessageBox.Show("Следующая на кнопке " + TimerController.Instance.GetCurrentTimerValue().ToString());
+            }
+            else
+                MessageBox.Show("Тот же символ " + TimerController.Instance.GetCurrentTimerValue().ToString());
         }
     }
 }

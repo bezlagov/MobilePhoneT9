@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtScreen = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -48,18 +48,20 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtScreen
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Blue;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.Color.Lime;
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 120);
-            this.textBox1.TabIndex = 0;
+            this.txtScreen.BackColor = System.Drawing.Color.Blue;
+            this.txtScreen.Enabled = false;
+            this.txtScreen.Font = new System.Drawing.Font("Arial Black", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtScreen.ForeColor = System.Drawing.Color.ForestGreen;
+            this.txtScreen.Location = new System.Drawing.Point(12, 23);
+            this.txtScreen.Multiline = true;
+            this.txtScreen.Name = "txtScreen";
+            this.txtScreen.Size = new System.Drawing.Size(169, 120);
+            this.txtScreen.TabIndex = 0;
             // 
             // button1
             // 
@@ -95,6 +97,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "►";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.OnChangeLenguageClick);
             // 
             // button4
             // 
@@ -117,6 +120,7 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "C";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.OnDeleteButtonClick);
             // 
             // button6
             // 
@@ -140,6 +144,7 @@
             this.button7.TabIndex = 7;
             this.button7.Text = "1";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.OnOneButtonClick);
             // 
             // button8
             // 
@@ -152,6 +157,8 @@
             this.button8.TabIndex = 8;
             this.button8.Text = "2 А Б В Г A B C";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On2KeyUp);
             // 
             // button9
             // 
@@ -267,11 +274,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(60, 142);
+            this.label1.Location = new System.Drawing.Point(59, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 22);
             this.label1.TabIndex = 19;
             this.label1.Text = "NOKIA";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Blue;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(150, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "RUS";
             // 
             // Form1
             // 
@@ -279,6 +297,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.ClientSize = new System.Drawing.Size(193, 487);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button17);
@@ -298,8 +317,10 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtScreen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Nokia";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -308,7 +329,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtScreen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -328,6 +349,7 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

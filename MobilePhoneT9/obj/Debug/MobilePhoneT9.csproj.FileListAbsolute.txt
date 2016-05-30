@@ -7,3 +7,12 @@ D:\Projects\MobilePhoneT9\MobilePhoneT9\obj\Debug\MobilePhoneT9.Properties.Resou
 D:\Projects\MobilePhoneT9\MobilePhoneT9\obj\Debug\MobilePhoneT9.csproj.GenerateResource.Cache
 D:\Projects\MobilePhoneT9\MobilePhoneT9\obj\Debug\MobilePhoneT9.exe
 D:\Projects\MobilePhoneT9\MobilePhoneT9\obj\Debug\MobilePhoneT9.pdb
+D:\Projects\T9\MobilePhoneT9\bin\Debug\MobilePhoneT9.exe.config
+D:\Projects\T9\MobilePhoneT9\obj\Debug\MobilePhoneT9.exe
+D:\Projects\T9\MobilePhoneT9\obj\Debug\MobilePhoneT9.pdb
+D:\Projects\T9\MobilePhoneT9\bin\Debug\MobilePhoneT9.exe
+D:\Projects\T9\MobilePhoneT9\bin\Debug\MobilePhoneT9.pdb
+D:\Projects\T9\MobilePhoneT9\obj\Debug\MobilePhoneT9.csprojResolveAssemblyReference.cache
+D:\Projects\T9\MobilePhoneT9\obj\Debug\MobilePhoneT9.Form1.resources
+D:\Projects\T9\MobilePhoneT9\obj\Debug\MobilePhoneT9.Properties.Resources.resources
+D:\Projects\T9\MobilePhoneT9\obj\Debug\MobilePhoneT9.csproj.GenerateResource.Cache

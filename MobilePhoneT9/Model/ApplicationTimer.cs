@@ -12,7 +12,9 @@ namespace MobilePhoneT9.Model
     {
         private static ApplicationTimer _instance;
         private Timer _buttonTimer = new Timer();
-        public double currentTimer { get; set; }
+        private Timer _mainTimer = new Timer();
+        public double CurrentTimer { get; set; }
+        public double MainTimerTiker { get; set; }
         public static ApplicationTimer Instance
         {
             get
@@ -26,22 +28,39 @@ namespace MobilePhoneT9.Model
         {
             _buttonTimer.Interval = 100;
             _buttonTimer.Tick += SetCurrentTimer;
+            _mainTimer.Interval = 100;
+            _mainTimer.Tick += SetCurrentMainTimer;
         }
 
         private void SetCurrentTimer(object sender, EventArgs e)
         {
-            currentTimer += 0.1;
+            CurrentTimer += 0.1;
+        }
+        private void SetCurrentMainTimer(object sender, EventArgs e)
+        {
+            MainTimerTiker += 0.1;
         }
 
         public void StartTimer()
         {
-            currentTimer = 0;
+            CurrentTimer = 0;
             _buttonTimer.Start();
+        }
+
+        public void StartMainTimer()
+        {
+            MainTimerTiker = 0;
+            _mainTimer.Start();
         }
 
         public void StopTimer()
         {
             _buttonTimer.Stop();
+        }
+
+        public void StopMainTimer()
+        {
+            _mainTimer.Stop();
         }
     }
 }

@@ -16,10 +16,14 @@ namespace MobilePhoneT9
     {
         public Form1()
         {
-
             InitializeComponent();
+            Init();
         }
 
+        private void Init()
+        {
+            TimerController.Instance.StartMainTimer();
+        }
         private void OnOneButtonClick(object sender, EventArgs e)
         {
             txtScreen.Text = DataController.Data().MainScreenText += "1";
@@ -42,7 +46,7 @@ namespace MobilePhoneT9
 
         private void On2KeyUp(object sender, MouseEventArgs e)
         {
-            if (TimerController.Instance.GetCurrentTimerValue() >= 3)
+            if (TimerController.Instance.GetCurrentTimerValue() >= 4)
             {
                 MessageBox.Show("Число " + TimerController.Instance.GetCurrentTimerValue().ToString());
             }
@@ -51,7 +55,15 @@ namespace MobilePhoneT9
                 MessageBox.Show("Следующая на кнопке " + TimerController.Instance.GetCurrentTimerValue().ToString());
             }
             else
+            {
+
                 MessageBox.Show("Тот же символ " + TimerController.Instance.GetCurrentTimerValue().ToString());
+            }
+        }
+
+        private void OnClosing(object sender, FormClosingEventArgs e)
+        {
+            TimerController.Instance.StopMainTimer();
         }
     }
 }

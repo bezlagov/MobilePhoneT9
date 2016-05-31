@@ -35,7 +35,22 @@ namespace MobilePhoneT9.Controller
 
         public double GetCurrentTimerValue()
         {
-            return ApplicationTimer.Instance.currentTimer;
+            return ApplicationTimer.Instance.CurrentTimer;
+        }
+
+        public void StartMainTimer()
+        {
+            ApplicationTimer.Instance.StartMainTimer();
+        }
+
+        public void StopMainTimer()
+        {
+            ApplicationTimer.Instance.StopMainTimer();
+        }
+
+        public double GetMainTimerValue()
+        {
+            return ApplicationTimer.Instance.MainTimerTiker;
         }
     }
 }

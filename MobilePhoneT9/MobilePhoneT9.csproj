@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ButtonController.cs" />
     <Compile Include="Controller\DataController.cs" />
     <Compile Include="Controller\MobileFunctions.cs" />
     <Compile Include="Controller\TimerController.cs" />

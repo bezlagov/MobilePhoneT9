@@ -240,7 +240,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(50, 50);
             this.button15.TabIndex = 13;
-            this.button15.Text = "7 Ф Х С Ч P Q R S";
+            this.button15.Text = "7 Ф Х Ц Ч P Q R S";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
             // 
@@ -330,6 +330,7 @@
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Nokia";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

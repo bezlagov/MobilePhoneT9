@@ -47,9 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ButtonController.cs" />
+    <Compile Include="Controller\DatabaseProvider.cs" />
     <Compile Include="Controller\DataController.cs" />
     <Compile Include="Controller\MobileFunctions.cs" />
+    <Compile Include="Controller\ThreadingController.cs" />
     <Compile Include="Controller\TimerController.cs" />
+    <Compile Include="Enumerators.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

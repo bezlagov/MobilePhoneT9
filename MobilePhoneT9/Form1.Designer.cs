@@ -49,6 +49,7 @@
             this.button18 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblCase = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtScreen
@@ -85,6 +86,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "◄";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.OnCaseChange);
             // 
             // button3
             // 
@@ -144,7 +146,8 @@
             this.button7.TabIndex = 7;
             this.button7.Text = "1";
             this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.OnOneButtonClick);
+            this.button7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On1KeyUp);
             // 
             // button8
             // 
@@ -171,6 +174,7 @@
             this.button9.Text = "3 Д Е Ж З D E F";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On3KeyUp);
             // 
             // button10
             // 
@@ -183,6 +187,7 @@
             this.button10.Text = "6 Р С Т У M N O";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On6KeyUp);
             // 
             // button11
             // 
@@ -195,6 +200,7 @@
             this.button11.Text = "5 М Н О П J K L";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On5KeyUp);
             // 
             // button12
             // 
@@ -207,6 +213,7 @@
             this.button12.Text = "4 И Й К Л G H I";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On4KeyUp);
             // 
             // button13
             // 
@@ -219,6 +226,7 @@
             this.button13.Text = "9 Ь Э Ю Я W X Y Z";
             this.button13.UseVisualStyleBackColor = false;
             this.button13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On9KeyUp);
             // 
             // button14
             // 
@@ -228,9 +236,10 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(50, 50);
             this.button14.TabIndex = 14;
-            this.button14.Text = "8 Ш Щ Ъ Ы T U V";
+            this.button14.Text = "8 Ш Щ Ъ Ы S T U V";
             this.button14.UseVisualStyleBackColor = false;
             this.button14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On8KeyUp);
             // 
             // button15
             // 
@@ -240,9 +249,10 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(50, 50);
             this.button15.TabIndex = 13;
-            this.button15.Text = "7 Ф Х Ц Ч P Q R S";
+            this.button15.Text = "7 Ф Х Ц Ч P Q R";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On7KeyUp);
             // 
             // button16
             // 
@@ -266,6 +276,7 @@
             this.button17.Text = "0 +";
             this.button17.UseVisualStyleBackColor = false;
             this.button17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.On2KeyDown);
+            this.button17.MouseUp += new System.Windows.Forms.MouseEventHandler(this.On0KeyUp);
             // 
             // button18
             // 
@@ -293,11 +304,22 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Blue;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(150, 121);
+            this.label2.Location = new System.Drawing.Point(150, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 20;
             this.label2.Text = "RUS";
+            // 
+            // lblCase
+            // 
+            this.lblCase.AutoSize = true;
+            this.lblCase.BackColor = System.Drawing.Color.Blue;
+            this.lblCase.ForeColor = System.Drawing.Color.Red;
+            this.lblCase.Location = new System.Drawing.Point(16, 126);
+            this.lblCase.Name = "lblCase";
+            this.lblCase.Size = new System.Drawing.Size(43, 13);
+            this.lblCase.TabIndex = 21;
+            this.lblCase.Text = "LOWER";
             // 
             // Form1
             // 
@@ -305,6 +327,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.ClientSize = new System.Drawing.Size(193, 487);
+            this.Controls.Add(this.lblCase);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button16);
@@ -359,6 +382,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCase;
     }
 }
 

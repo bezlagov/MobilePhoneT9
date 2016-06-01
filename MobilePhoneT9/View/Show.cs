@@ -14,5 +14,11 @@ namespace MobilePhoneT9.View
                 return "RUS";
             else return "ENG";
         }
+        public static string SetCase(bool value)
+        {
+            if (value)
+                return "LOWER";
+            else return "UPPER";
+        }
     }
 }

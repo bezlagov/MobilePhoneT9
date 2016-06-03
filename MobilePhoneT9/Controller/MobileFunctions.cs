@@ -45,5 +45,33 @@ namespace MobilePhoneT9.Controller
                 return TelephoneData.Instance.MainScreenText = TelephoneData.Instance.MainScreenText.Remove(TelephoneData.Instance.MainScreenText.Length - 1, 1);
             return null;
         }
+
+        public string SudgestWords(string value)
+        {
+            string findedValue="";
+            if (Data.Instance.dictionaryData == null)
+                DatabaseProvider.Instance.GetData();
+            if (TelephoneData.Instance.isRusSeted == true)
+            {
+                foreach (var item in Data.Instance.dictionaryData)
+                {
+                    if (item.Russian.Contains(value))
+                    {
+                        return findedValue = item.Russian;
+                    }
+                }
+            }
+            else
+            {
+                foreach (var item in Data.Instance.dictionaryData)
+                {
+                    if (item.English.Contains(value))
+                    {
+                        return findedValue = item.English;
+                    }
+                }
+            }
+            return findedValue;
+        }
     }
 }

@@ -50,6 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCase = new System.Windows.Forms.Label();
+            this.lblT9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtScreen
@@ -74,6 +75,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "▲";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.OnUpClick);
             // 
             // button2
             // 
@@ -134,6 +136,7 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "Add";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.OnAddClick);
             // 
             // button7
             // 
@@ -321,12 +324,23 @@
             this.lblCase.TabIndex = 21;
             this.lblCase.Text = "LOWER";
             // 
+            // lblT9
+            // 
+            this.lblT9.AutoSize = true;
+            this.lblT9.BackColor = System.Drawing.Color.Blue;
+            this.lblT9.Location = new System.Drawing.Point(69, 107);
+            this.lblT9.Name = "lblT9";
+            this.lblT9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblT9.Size = new System.Drawing.Size(0, 13);
+            this.lblT9.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.ClientSize = new System.Drawing.Size(193, 487);
+            this.Controls.Add(this.lblT9);
             this.Controls.Add(this.lblCase);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -383,6 +397,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCase;
+        private System.Windows.Forms.Label lblT9;
     }
 }
 

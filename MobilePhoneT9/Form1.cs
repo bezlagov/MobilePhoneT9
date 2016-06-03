@@ -14,6 +14,7 @@ namespace MobilePhoneT9
 {
     public partial class Form1 : Form
     {
+        private string tNineString;
         private double _tempTimerValue = 0;
         private bool _isFirsTuch = true;
         public Form1()
@@ -24,13 +25,18 @@ namespace MobilePhoneT9
 
         private void Init()
         {
-              TimerController.Instance.StartMainTimer();
+            TimerController.Instance.StartMainTimer();
+            DatabaseProvider.Instance.LoadData();
+            tNineString = "";
             //ThreadingController.Instance.StartTimerX();
         }
 
         private void OnDeleteButtonClick(object sender, EventArgs e)
         {
             txtScreen.Text = MobileFunctions.Instance.DeleteSymbol();
+            if (tNineString.Length > 0)
+                tNineString = tNineString.Remove(tNineString.Length - 1, 1);
+            lblT9.Text = MobileFunctions.Instance.SudgestWords(tNineString);
         }
 
         private void OnChangeLenguageClick(object sender, EventArgs e)
@@ -56,6 +62,8 @@ namespace MobilePhoneT9
                     if (_isFirsTuch)
                     {
                         txtScreen.Text = DataController.Data().MainScreenText += ButtonController.GetSymbol(value);
+                        T9Control(ButtonController.GetSymbol(value));
+                        lblT9.Text = MobileFunctions.Instance.SudgestWords(tNineString);
                         ButtonController.IncrementValue(value);
                         _isFirsTuch = false;
                         _tempTimerValue = TimerController.Instance.GetMainTimerValue();
@@ -66,6 +74,8 @@ namespace MobilePhoneT9
                         _isFirsTuch = false;
                         txtScreen.Text = MobileFunctions.Instance.DeleteSymbol();
                         txtScreen.Text = DataController.Data().MainScreenText += ButtonController.GetSymbol(value);
+                        T9Control(ButtonController.GetSymbol(value));
+                        lblT9.Text = MobileFunctions.Instance.SudgestWords(tNineString);
                         ButtonController.IncrementValue(value);
                         _tempTimerValue = TimerController.Instance.GetMainTimerValue();
                         return;
@@ -76,6 +86,8 @@ namespace MobilePhoneT9
                     _isFirsTuch = true;
                     ButtonController.ClearValue();
                     txtScreen.Text = DataController.Data().MainScreenText += ButtonController.GetSymbol(value);
+                    T9Control(ButtonController.GetSymbol(value));
+                    lblT9.Text = MobileFunctions.Instance.SudgestWords(tNineString);
                     _tempTimerValue = TimerController.Instance.GetMainTimerValue();
                     return;
                 }
@@ -137,8 +149,38 @@ namespace MobilePhoneT9
 
         private void OnCaseChange(object sender, EventArgs e)
         {
-           lblCase.Text = View.Show.SetCase(MobileFunctions.Instance.CaseChange());
+            lblCase.Text = View.Show.SetCase(MobileFunctions.Instance.CaseChange());
         }
         #endregion
+        private void T9Control(string value)
+        {
+            if (value == " ") tNineString = "";
+            else tNineString += value;
+            //for (int i = DataController.Data().MainScreenText.Length; i < 0; i--)
+            //{
+            //    if (DataController.Data().MainScreenText[i].ToString()==" ")
+            //    {
+            //        tNineString=DataController.Data().MainScreenText.Substring(i);
+            //    }
+            //}
+        }
+
+        private void OnAddClick(object sender, EventArgs e)
+        {
+            while (DataController.Data().MainScreenText.Length == 0)
+            {
+                if (DataController.Data().MainScreenText.EndsWith(" ")) break;
+                DataController.Data().MainScreenText=DataController.Data().MainScreenText.Remove(DataController.Data().MainScreenText.Length - 1, 1);
+            }
+            DataController.Data().MainScreenText += lblT9.Text;
+            lblT9.Text = "";
+            txtScreen.Text = DataController.Data().MainScreenText;
+            T9Control(" ");
+        }
+
+        private void OnUpClick(object sender, EventArgs e)
+        {
+            lblCase.Text = tNineString;
+        }
     }
 }
